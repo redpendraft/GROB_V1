@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="files/style.css">
+    <title>ГЕНЕРАТОР ОСРНЫХ БОМЖЕЙ</title>
+</head>
+<!--/////////////////////////////////////////////////////////////////////////-->
+<body>
+    <h1>ГЕНЕРАТОР ОСРНЫХ БОМЖЕЙ</h1>
+    <div id="zone">
+        <div>
+          <button id="generateButton">НОВЫЙ БОМЖ</button>
+          <button id="canvasButton">ПРИДЕРЖАТЬ</button></br>
+          <input type="text" id="inputField" placeholder="введите ключ">
+          <div id="portrait">
+                  <div id="back"></div>
+                  <div id="backbody"></div>
+                  <div id="body"></div>
+                  <div id="ear"></div>
+                  <div id="backhead"></div>
+                  <div id="hair"></div>
+                  <div id="eyesback"></div>
+                  <div id="eyeball"></div>
+                  <div id="chin"></div>
+                  <div id="teeth"></div>
+                  <div id="mouth"></div>
+                  <div id="eyes"></div>
+                  <div id="brow"></div>
+                  <div id="beard"></div>
+                  <div id="teache"></div>
+                  <div id="nose"></div>
+                  <div id="dop"></div>
+          </div>
+          <br>
+          <canvas id="finalImage" width="560" height="560"></canvas>
+        </div>
+
+        <div>
+        <div class='help'>
+            <div><input type="checkbox" id="colorHair">ОДНООБРАЗНАЯ ВОЛОСНЯ</div>
+            <div><input type="checkbox" id="colorBack">ОДНОЦВЕТНЫЙ ФОНИЩЕ</div>
+            <div class="redactor">
+              <!--Выбор фона. Индекс - 0-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="back" id="iback">
+                  - фон
+              </div>
+              <!--Выбор цвета одежды. Индекс - 1-2-->
+
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="backbody" id="ibackbody">
+                  - цвет одёжы
+              </div>
+
+              <!--Выбор одежды. Индекс - 3-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="body" id="ibody">
+                  - одёжа
+              </div class="construct">
+
+              <!--Выбор уха. Индекс - 4-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="ear" id="iear">
+                  - ухи
+              </div>
+
+              <!--Выбор - шлем или волосы? Индекс - 5-->
+              <div class="construct">
+                  <input type="checkbox" name="hashelmet" id="ihashelmet">
+                  - наличие шлёма?
+              </div>
+
+              <!--Цвет шлема. Индекс - 6-7-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="backhair" id="ibackhair">
+                  - шлёмные цвета
+              </div>
+
+              <!--Цвет волос. Индекс - 8-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="haircolor" id="ihaircolor">
+                  - волосатые цвета
+              </div>
+
+              <!--Волосы/Шлем. Индекс - 9-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="hair" id="ihair">
+                  - причесон или шапка
+              </div>
+
+              <!--Цвет глаз. Индекс - 10-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyesback" id="ieyesback">
+                  - цвет глазюк
+              </div>
+
+              <!--Глазные яблоки. Индекс - 11-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyeball" id="ieyeball">
+                  - зрюкала
+              </div>
+
+              <!--Челюсть. Индекс - 12-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="chin" id="ichin">
+                  - челюсти
+              </div>
+
+              <!--Зубы. Индекс - 13-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teeth" id="iteeth">
+                  - жвалы
+              </div>
+
+              <!--Рот. Индекс - 14-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="mouth" id="imouth">
+                  - хлебальник
+              </div>
+
+              <!--Глаза. Индекс - 15-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyes" id="ieyes">
+                  - глазюки
+              </div>
+
+              <!--Цвет бровей. Индекс - 16-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="browscolor" id="ibrowscolor">
+                  - цвет бровищ
+              </div>
+
+              <!--Брови. Индекс - 17-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="brows" id="ibrows">
+                  - бровищи
+              </div>
+
+              <!--Есть ли борода? Индекс - 18-->
+              <div class="construct">
+                  <input type="checkbox" name="hasbeard" id="ihasbeard">
+                  - бородатость
+              </div>
+
+              <!--Цвет бороды Индекс - 19-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="beardcolor" id="ibeardcolor">
+                  - цвета твоей бородатости
+              </div>
+
+              <!--Борода Индекс - 20-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="beard" id="ibeard">
+                  - бородища
+              </div>
+
+              <!--Есть ли усы? Индекс - 21-->
+              <div class="construct">
+                  <input type="checkbox" name="hasteache" id="ihasteache">
+                  - усатость
+              </div>
+
+              <!--Цвет бороды Индекс - 22-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teachecolor" id="iteachecolor">
+                  - цвета усищ
+              </div>
+
+              <!--Борода Индекс - 23-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teache" id="iteache">
+                  - усища
+              </div>
+
+              <!--Нос Индекс - 24-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="nose" id="inose">
+                  - нюхало
+              </div>
+
+              <!--Есть ли предмет? Индекс - 25-->
+              <div class="construct">
+                  <input type="checkbox" name="hasdop" id="ihasdop">
+                  - наличие шматья
+              </div>
+
+              <!--Предмет Индекс - 26-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="dop" id="idop">
+                  - шматьё
+              </div>
+            </div>
+            <h3>история сгенерированных ключей</h3>
+            <div id="history"></div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+
+
+
+
+
+
+
+
+<!--/////////////////////////////////////////////////////////////////////-->
+        <script>
+        const imageMap = {
+            back: "back_",
+            backbody: "backbody_",
+            body: "body_",
+            ear: "ear_",
+            backhead: "backhead_",
+            hair: "hair_",
+            eyesback: "eyesback_",
+            eyeball: "eyeball_",
+            chin: "chin_",
+            teeth: "teeth_",
+            mouth: "mouth_",
+            eyes: "eyes_",
+            brow: "brow_",
+            beard: "beard_",
+            teache: "teache_",
+            nose: "nose_",
+            dop: "dop_",
+        };
+
+        document.getElementById("generateButton").addEventListener("click", generateKey);
+        document.getElementById("canvasButton").addEventListener("click", goCanvas);
+
+        document.getElementById("inputField").addEventListener("input", useKey);
+        document.getElementById("inputField").addEventListener("focus", focusKey);
+
+        document.getElementById("iback").addEventListener("focus", focusInput);
+        document.getElementById("ibackbody").addEventListener("focus", focusInput);
+        document.getElementById("ibody").addEventListener("focus", focusInput);
+        document.getElementById("iear").addEventListener("focus", focusInput);
+        document.getElementById("ihashelmet").addEventListener("focus", focusInput);
+        document.getElementById("ibackhair").addEventListener("focus", focusInput);
+        document.getElementById("ihaircolor").addEventListener("focus", focusInput);
+        document.getElementById("ihair").addEventListener("focus", focusInput);
+        document.getElementById("ieyesback").addEventListener("focus", focusInput);
+        document.getElementById("ieyeball").addEventListener("focus", focusInput);
+        document.getElementById("ichin").addEventListener("focus", focusInput);
+        document.getElementById("iteeth").addEventListener("focus", focusInput);
+        document.getElementById("imouth").addEventListener("focus", focusInput);
+        document.getElementById("ieyes").addEventListener("focus", focusInput);
+        document.getElementById("ibrowscolor").addEventListener("focus", focusInput);
+        document.getElementById("ibrows").addEventListener("focus", focusInput);
+        document.getElementById("ihasbeard").addEventListener("focus", focusInput);
+        document.getElementById("ibeardcolor").addEventListener("focus", focusInput);
+        document.getElementById("ibeard").addEventListener("focus", focusInput);
+        document.getElementById("ihasteache").addEventListener("focus", focusInput);
+        document.getElementById("iteachecolor").addEventListener("focus", focusInput);
+        document.getElementById("iteache").addEventListener("focus", focusInput);
+        document.getElementById("inose").addEventListener("focus", focusInput);
+        document.getElementById("ihasdop").addEventListener("focus", focusInput);
+        document.getElementById("idop").addEventListener("focus", focusInput);
+
+        document.getElementById("iback").addEventListener("input", useInput);
+        document.getElementById("ibackbody").addEventListener("input", useInput);
+        document.getElementById("ibody").addEventListener("input", useInput);
+        document.getElementById("iear").addEventListener("input", useInput);
+        document.getElementById("ihashelmet").addEventListener("input", useInput);
+        document.getElementById("ibackhair").addEventListener("input", useInput);
+        document.getElementById("ihaircolor").addEventListener("input", useInput);
+        document.getElementById("ihair").addEventListener("input", useInput);
+        document.getElementById("ieyesback").addEventListener("input", useInput);
+        document.getElementById("ieyeball").addEventListener("input", useInput);
+        document.getElementById("ichin").addEventListener("input", useInput);
+        document.getElementById("iteeth").addEventListener("input", useInput);
+        document.getElementById("imouth").addEventListener("input", useInput);
+        document.getElementById("ieyes").addEventListener("input", useInput);
+        document.getElementById("ibrowscolor").addEventListener("input", useInput);
+        document.getElementById("ibrows").addEventListener("input", useInput);
+        document.getElementById("ihasbeard").addEventListener("input", useInput);
+        document.getElementById("ibeardcolor").addEventListener("input", useInput);
+        document.getElementById("ibeard").addEventListener("input", useInput);
+        document.getElementById("ihasteache").addEventListener("input", useInput);
+        document.getElementById("iteachecolor").addEventListener("input", useInput);
+        document.getElementById("iteache").addEventListener("input", useInput);
+        document.getElementById("inose").addEventListener("input", useInput);
+        document.getElementById("ihasdop").addEventListener("input", useInput);
+        document.getElementById("idop").addEventListener("input", useInput);
+
+        window.onload = generateKey; // Генерируем ключ при загрузке страницы
+
+        let historyList = []; // Массив для хранения истории ключей
+        let currentFocus = "Key";
+        function focusKey(){
+            currentFocus = "Key";
+        }
+        function focusInput(){
+            currentFocus = "Input";
+        }
+        function generateKey(){
+
+            let randomKey = Array.from({ length: 27 }, () => Math.floor(Math.random() * 8) + 1);
+            // Проверяем 11 число (индекс 10)
+            if (document.getElementById("colorBack").checked === true){
+                randomKey[6] = randomKey[1];
+                randomKey[10] = randomKey[1];
+            }
+            randomKey[2] = randomKey[3];
+
+            if (document.getElementById("colorHair").checked === true){
+                randomKey[16] = randomKey[8];
+                randomKey[19] = randomKey[8];
+                randomKey[22] = randomKey[8];
+            }
+            if (randomKey[5] < 5) {
+                randomKey[8] = 0;
+            }
+            else {
+                randomKey[6] = 0;
+
+            }
+            randomKey[7] = randomKey[9];
+
+
+            if (randomKey[18] < 5) {
+                randomKey[19] = 0;
+                randomKey[20] = 0;
+            }
+            if (randomKey[21] < 5) {
+                randomKey[22] = 0;
+                randomKey[23] = 0;
+            }
+            if (randomKey[25] < 5) {
+                randomKey[26] = 0;
+            }
+
+            document.getElementById("inputField").value = randomKey.join('');
+            focusKey();
+            updatePortraitByKey();
+
+            const keyString = randomKey.join('');
+            document.getElementById("inputField").value = keyString;
+
+            historyList.push(keyString); // Добавляем новый ключ в историю
+
+            // Ограничиваем количество ключей до 8
+            if (historyList.length > 12) {
+                historyList.shift(); // Удаляем самый старый ключ
+            }
+
+            updateHistory(); // Обновляем отображение истории
+        }
+        function useKey(){
+            if (currentFocus === "Key") updatePortraitByKey();
+        }
+        function useInput(){
+            if (currentFocus != "Key") updatePortraitByInput();
+        }
+
+        function updatePortraitByKey(){
+            let input = document.getElementById("inputField").value;
+            let portraitDivs = document.querySelectorAll("#portrait > div");
+            portraitDivs.forEach(div => div.innerHTML = '');
+
+            loadImage("back", `files/base/${imageMap.back}0${input.charAt(0)}.png`);
+            loadImage("backbody", `files/base/${imageMap.backbody}${input.charAt(1)}${input.charAt(2)}.png`);
+            loadImage("body", `files/base/${imageMap.body}0${input.charAt(3)}.png`);
+            loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
+            // 5 шапка или причёска?
+            loadImage("backhead", `files/base/${imageMap.backhead}${input.charAt(6)}${input.charAt(7)}.png`);
+            loadImage("hair", `files/base/${imageMap.hair}${input.charAt(8)}${input.charAt(9)}.png`);
+            loadImage("eyesback", `files/base/${imageMap.eyesback}0${input.charAt(10)}.png`);
+            loadImage("eyeball", `files/base/${imageMap.eyeball}0${input.charAt(11)}.png`);
+            loadImage("chin", `files/base/${imageMap.chin}0${input.charAt(12)}.png`);
+            loadImage("teeth", `files/base/${imageMap.teeth}0${input.charAt(13)}.png`);
+            loadImage("mouth", `files/base/${imageMap.mouth}0${input.charAt(14)}.png`);
+            loadImage("eyes", `files/base/${imageMap.eyes}0${input.charAt(15)}.png`);
+            loadImage("brow", `files/base/${imageMap.brow}${input.charAt(16)}${input.charAt(17)}.png`);
+            // 18 есть ли борода?
+            loadImage("beard", `files/base/${imageMap.beard}${input.charAt(19)}${input.charAt(20)}.png`);
+            // 21 есть ли усы?
+            loadImage("teache", `files/base/${imageMap.teache}${input.charAt(22)}${input.charAt(23)}.png`);
+            loadImage("nose", `files/base/${imageMap.nose}0${input.charAt(24)}.png`);
+            // 25 есть ли дополнение?
+            loadImage("dop", `files/base/${imageMap.dop}0${input.charAt(26)}.png`);
+            document.getElementById("portrait").style.display = 'block';
+            convertKey();
+        }
+
+        function updatePortraitByInput(){
+            let input = '';
+            input = input + document.getElementById("iback").value; //Фон, индекс - 0
+            input = input + document.getElementById("ibackbody").value + document.getElementById("ibody").value; //Цвет тела, индекс - 1 и 2
+            input = input + document.getElementById("ibody").value; //Тело, индекс - 3
+            input = input + document.getElementById("iear").value; //Ухо, индекс - 4.
+            if (document.getElementById("ihashelmet").checked){
+                input = input + '1';//Наличие шлема, индекс - 5.
+                input = input + document.getElementById("ibackhair").value + document.getElementById("ihair").value;//Цвет шлема, индекс - 6 и 7
+                input = input + '0' + document.getElementById("ihair").value;//Сам шлем, индекс - 8 и 9
+            }
+            else{
+                input = input + '5';//Наличие шлема, индекс - 5.
+                input = input + '00';//Цвет шлема, индекс - 6 и 7
+                input = input + document.getElementById("ihaircolor").value + document.getElementById("ihair").value;//Волосы, индекс - 8 и 9
+            }
+            input = input + document.getElementById("ieyesback").value; //Цвет глаз, индекс - 10
+            input = input + document.getElementById("ieyeball").value; //Белки глаз, индекс - 11
+            input = input + document.getElementById("ichin").value; //Челюсть, индекс - 12
+            input = input + document.getElementById("iteeth").value; //Зубы, индекс - 13
+            input = input + document.getElementById("imouth").value; //Рот, индекс - 14
+            input = input + document.getElementById("ieyes").value; //Глаза, индекс - 15
+            input = input + document.getElementById("ibrowscolor").value; //Цвет бровей, индекс - 16
+            input = input + document.getElementById("ibrows").value; //Глаза, индекс - 17
+            if (document.getElementById("ihasbeard").checked){
+                input = input + '1';//Наличие бороды, индекс - 18.
+                input = input + document.getElementById("ibeardcolor").value + document.getElementById("ibeard").value; //Борода, индекс - 19 и 20.
+            }
+            else{
+                input = input + '5'; //Наличие бороды, индекс - 18.
+                input = input + '00'; //Борода, индекс - 19 и 20.
+            }
+            if (document.getElementById("ihasteache").checked){
+                input = input + '1'; //Наличие усов, индекс - 21.
+                input = input + document.getElementById("iteachecolor").value + document.getElementById("iteache").value; //Усы, индекс - 22 и 23.
+            }
+            else{
+                input = input + '5'; //Наличие усов, индекс - 21.
+                input = input + '00'; //Усы, индекс - 22 и 23.
+            }
+            input = input + document.getElementById("inose").value; //Нос - 24.
+            if (document.getElementById("ihasdop").checked){
+                input = input + '1'; //Наличие предмета, индекс - 25.
+                input = input + document.getElementById("idop").value; //Предмет, индекс - 26.
+            }
+            else{
+                input = input + '5'; //Наличие предмета, индекс - 25.
+                input = input + '0'; //Предмет, индекс - 26.
+            }
+            let portraitDivs = document.querySelectorAll("#portrait > div");
+            portraitDivs.forEach(div => div.innerHTML = '');
+
+            loadImage("back", `files/base/${imageMap.back}0${input.charAt(0)}.png`);
+            loadImage("backbody", `files/base/${imageMap.backbody}${input.charAt(1)}${input.charAt(2)}.png`);
+            loadImage("body", `files/base/${imageMap.body}0${input.charAt(3)}.png`);
+            loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
+            // 5 шапка или причёска?
+            loadImage("backhead", `files/base/${imageMap.backhead}${input.charAt(6)}${input.charAt(7)}.png`);
+            loadImage("hair", `files/base/${imageMap.hair}${input.charAt(8)}${input.charAt(9)}.png`);
+            loadImage("eyesback", `files/base/${imageMap.eyesback}0${input.charAt(10)}.png`);
+            loadImage("eyeball", `files/base/${imageMap.eyeball}0${input.charAt(11)}.png`);
+            loadImage("chin", `files/base/${imageMap.chin}0${input.charAt(12)}.png`);
+            loadImage("teeth", `files/base/${imageMap.teeth}0${input.charAt(13)}.png`);
+            loadImage("mouth", `files/base/${imageMap.mouth}0${input.charAt(14)}.png`);
+            loadImage("eyes", `files/base/${imageMap.eyes}0${input.charAt(15)}.png`);
+            loadImage("brow", `files/base/${imageMap.brow}${input.charAt(16)}${input.charAt(17)}.png`);
+            // 18 есть ли борода?
+            loadImage("beard", `files/base/${imageMap.beard}${input.charAt(19)}${input.charAt(20)}.png`);
+            // 21 есть ли усы?
+            loadImage("teache", `files/base/${imageMap.teache}${input.charAt(22)}${input.charAt(23)}.png`);
+            loadImage("nose", `files/base/${imageMap.nose}0${input.charAt(24)}.png`);
+            // 25 есть ли дополнение?
+            loadImage("dop", `files/base/${imageMap.dop}0${input.charAt(26)}.png`);
+            document.getElementById("portrait").style.display = 'block';
+
+            document.getElementById("inputField").value = input;
+        }
+
+        function loadImage(part, src) {
+            let img = document.createElement("img");
+            img.src = src;
+            img.alt = part;
+            img.onload = () => {
+                img.classList.add("image-"+part);
+                document.getElementById(part).appendChild(img);
+            };
+            img.onerror = () => {
+                console.error(`Ошибка загрузки изображения: ${src}`);
+            };
+        }
+        function convertKey(){
+            let input = document.getElementById("inputField").value;
+            document.getElementById("iback").value = input.charAt(0);
+            document.getElementById("ibackbody").value = input.charAt(1);
+            document.getElementById("ibody").value = input.charAt(3);
+            document.getElementById("iear").value = input.charAt(4);
+            if ((0 + input.charAt(5)) < 5) {
+                document.getElementById("ihashelmet").checked  = true;
+                document.getElementById("ibackhair").value = input.charAt(6);
+                document.getElementById("ihaircolor").value = 1;
+            }
+            else {
+                document.getElementById("ihashelmet").checked  = false;
+                document.getElementById("ibackhair").value = 1;
+                document.getElementById("ihaircolor").value = input.charAt(8);
+            }
+            document.getElementById("ihair").value = input.charAt(9);
+            document.getElementById("ieyesback").value = input.charAt(10);
+            document.getElementById("ieyeball").value = input.charAt(11);
+            document.getElementById("ichin").value = input.charAt(12);
+            document.getElementById("iteeth").value = input.charAt(13);
+            document.getElementById("imouth").value = input.charAt(14);
+            document.getElementById("ieyes").value = input.charAt(15);
+            document.getElementById("ibrowscolor").value = input.charAt(16);
+            document.getElementById("ibrows").value = input.charAt(17);
+            if ((0 + input.charAt(18)) > 4) {
+                document.getElementById("ihasbeard").checked =true;
+                document.getElementById("ibeardcolor").value = input.charAt(19);
+                document.getElementById("ibeard").value = input.charAt(20);
+            }
+            else {
+                document.getElementById("ihasbeard").checked =false;
+                document.getElementById("ibeardcolor").value = 1;
+                document.getElementById("ibeard").value = 1;
+            }
+            if ((0 + input.charAt(21)) > 4) {
+                document.getElementById("ihasteache").checked =true;
+                document.getElementById("iteachecolor").value = input.charAt(22);
+                document.getElementById("iteache").value = input.charAt(23);
+            }
+            else {
+                document.getElementById("ihasteache").checked =false;
+                document.getElementById("iteachecolor").value = 1;
+                document.getElementById("iteache").value = 1;
+            }
+            document.getElementById("inose").value = input.charAt(24);
+            if ((0 + input.charAt(25)) > 4) {
+                document.getElementById("ihasdop").checked =true;
+                document.getElementById("idop").value = input.charAt(26);
+            }
+            else {
+                document.getElementById("ihasdop").checked =false;
+                document.getElementById("idop").value = 1;
+            }
+        }
+
+        function goCanvas() {
+            const input = document.getElementById("inputField").value;
+            var canvas = document.getElementById("finalImage");
+            var ctx = canvas.getContext("2d");
+
+            const parts = [
+                { src: `files/base/back_0${input.charAt(0)}.png`, position: [0, 0] },
+                { src: `files/base/backbody_${input.charAt(1)}${input.charAt(2)}.png`, position: [0, 0] },
+                { src: `files/base/body_0${input.charAt(3)}.png`, position: [0, 0] },
+                { src: `files/base/ear_0${input.charAt(4)}.png`, position: [0, 0] },
+                { src: `files/base/backhead_${input.charAt(6)}${input.charAt(7)}.png`, position: [0, 0] },
+                { src: `files/base/hair_${input.charAt(8)}${input.charAt(9)}.png`, position: [0, 0] },
+                { src: `files/base/eyesback_0${input.charAt(10)}.png`, position: [0, 0] },
+                { src: `files/base/eyeball_0${input.charAt(11)}.png`, position: [0, 0] },
+                { src: `files/base/chin_0${input.charAt(12)}.png`, position: [0, 0] },
+                { src: `files/base/teeth_0${input.charAt(13)}.png`, position: [0, 0] },
+                { src: `files/base/mouth_0${input.charAt(14)}.png`, position: [0, 0] },
+                { src: `files/base/eyes_0${input.charAt(15)}.png`, position: [0, 0] },
+                { src: `files/base/brow_${input.charAt(16)}${input.charAt(17)}.png`, position: [0, 0] },
+                { src: `files/base/beard_${input.charAt(19)}${input.charAt(20)}.png`, position: [0, 0] },
+                { src: `files/base/teache_${input.charAt(22)}${input.charAt(23)}.png`, position: [0, 0] },
+                { src: `files/base/nose_0${input.charAt(24)}.png`, position: [0, 0] },
+                { src: `files/base/dop_0${input.charAt(26)}.png`, position: [0, 0] },
+            ];
+
+            let loadCount = 0; // Счетчик загруженных изображений
+
+            // Функция для загрузки изображения и его рисования на холсте
+            const loadAndDrawImage = (part) => {
+                const img = new Image();
+                img.src = part.src;
+                img.onload = () => {
+                    ctx.drawImage(img, ...part.position, 560, 560);
+                    loadCount++;
+                    // Проверяем, загрузились ли все изображения
+                    if (loadCount === parts.length) {
+                        console.log("Все изображения загружены и отрисованы!");
+                    }
+                };
+                img.onerror = () => {
+                console.error(`Ошибка загрузки изображения: ${part.src}`);
+                };
+            };
+
+            // Начинаем загрузку и отрисовку изображений
+            parts.forEach(loadAndDrawImage);
+        }
+        function updateHistory() {
+            const historyContainer = document.getElementById("history");
+            historyContainer.innerHTML = ''; // Очищаем текущее отображение истории
+            // Проходим по истории в обратном порядке
+            for (let i = historyList.length - 1; i >= 0; i--) {
+                const listItem = document.createElement('li');
+                listItem.textContent = historyList[i]; // Добавляем каждый ключ как элемент списка
+                historyContainer.appendChild(listItem);
+                }
+        }
+    </script>
+</body>
+</html>
