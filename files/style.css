@@ -1,0 +1,120 @@
+body {
+  background-image: url(background.png);
+  background-repeat: no-repeat;
+  background-color: #0d0d0d;
+  color: white;
+  font-family: redpendraft_001 Regular;
+  font-size: 20px;
+}
+
+@font-face {
+	font-family: 'redpendraft_001 Regular';
+	src: local('redpendraft_001'),
+		url(redpendraft_001.ttf);
+}
+
+.construct {
+  height: 23px;
+  font-size: 30px;
+}
+.redactor {
+  margin: 20px 0 20px 0;
+}
+
+#history {
+  margin: 0px;
+  }
+
+#zone {
+  display: grid;
+  grid-template-columns: 580px auto;
+  margin-left: 36px;
+  margin-top: 36px;
+  }
+
+#portrait {
+  width: 560px;
+  height: 560px;
+  border: 5px;
+  border-color: white;
+  display: none;
+}
+
+h1 {
+  font-family: a_redpen_gothic;
+  color: rgba(255, 0, 0, 0);
+}
+img {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+h3 {
+  margin: 0px;
+}
+input {
+  height: 16px;
+  width: 30px;
+  background-color: #0d0d0d;
+  color: #80766a;
+  font-family: redpendraft_001 Regular;
+  font-size: 48px;
+  border: none;
+}
+
+#inputField {
+  height: 34px;
+  width: 560px;
+  font-size: 48px;
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border: none;
+  text-align: center;
+  font-family: redpendraft_001 Regular;
+}
+#history {
+  font-size: 30px;
+}
+
+::marker {
+  color: rgba(255, 0, 0, 0);
+}
+
+input:focus-visible {
+    outline: none;
+
+}
+
+button {
+  height: 40px;
+  width: 278px;
+  font-size: 30px;
+  background-color: #0d0d0d;
+  color: rgba(255, 0, 0, 0);
+  font-family: redpendraft_001 Regular;
+  font-size: 34px;
+  border: 0px;
+}
+
+#generateButton {
+    background-image: url(button_11.png);
+}
+#canvasButton {
+    background-image: url(button_21.png);
+}
+#generateButton:active {
+  background-image: url(button_12.png);
+}
+#canvasButton:active {
+  background-image: url(button_22.png);
+}
+
+select {
+  font-size: 15pt;
+  color: #0d0d0d;
+  background-color: #72635b;
+  border: none;
+  padding: none;
+  width: 40px;
+  height: 30px;
+}
