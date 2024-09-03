@@ -17,6 +17,13 @@ body {
   height: 23px;
   font-size: 30px;
 }
+
+.constructcheckbox {
+  margin: 0px 0px 0px 0px;
+  font-size: 30px;
+  height: 26px;
+}
+
 .redactor {
   margin: 20px 0 20px 0;
 }
