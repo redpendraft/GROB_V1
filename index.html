@@ -46,12 +46,6 @@
                   <input type="number" min="1" max= "8" name="back" id="iback">
                   - фон
               </div>
-              <!--Выбор цвета одежды. Индекс - 1-2-->
-
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="backbody" id="ibackbody">
-                  - цвет одёжы
-              </div>
 
               <!--Выбор одежды. Индекс - 3-->
               <div class="construct">
@@ -59,16 +53,29 @@
                   - одёжа
               </div class="construct">
 
+              <!--Выбор цвета одежды. Индекс - 1-2-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="backbody" id="ibackbody">
+                  - цвет одёжы
+              </div>
+
               <!--Выбор уха. Индекс - 4-->
               <div class="construct">
                   <input type="number" min="1" max= "8" name="ear" id="iear">
                   - ухи
               </div>
+              </br>
 
               <!--Выбор - шлем или волосы? Индекс - 5-->
-              <div class="construct">
+              <div class="constructcheckbox">
                   <input type="checkbox" name="hashelmet" id="ihashelmet">
                   - наличие шлёма?
+              </div>
+
+              <!--Волосы/Шлем. Индекс - 9-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="hair" id="ihair">
+                  - тип шапки или причёски
               </div>
 
               <!--Цвет шлема. Индекс - 6-7-->
@@ -82,95 +89,12 @@
                   <input type="number" min="1" max= "8" name="haircolor" id="ihaircolor">
                   - волосатые цвета
               </div>
-
-              <!--Волосы/Шлем. Индекс - 9-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="hair" id="ihair">
-                  - причесон или шапка
-              </div>
-
-              <!--Цвет глаз. Индекс - 10-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="eyesback" id="ieyesback">
-                  - цвет глазюк
-              </div>
-
-              <!--Глазные яблоки. Индекс - 11-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="eyeball" id="ieyeball">
-                  - зрюкала
-              </div>
+              </br>
 
               <!--Челюсть. Индекс - 12-->
               <div class="construct">
                   <input type="number" min="1" max= "8" name="chin" id="ichin">
-                  - челюсти
-              </div>
-
-              <!--Зубы. Индекс - 13-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="teeth" id="iteeth">
-                  - жвалы
-              </div>
-
-              <!--Рот. Индекс - 14-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="mouth" id="imouth">
-                  - хлебальник
-              </div>
-
-              <!--Глаза. Индекс - 15-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="eyes" id="ieyes">
-                  - глазюки
-              </div>
-
-              <!--Цвет бровей. Индекс - 16-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="browscolor" id="ibrowscolor">
-                  - цвет бровищ
-              </div>
-
-              <!--Брови. Индекс - 17-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="brows" id="ibrows">
-                  - бровищи
-              </div>
-
-              <!--Есть ли борода? Индекс - 18-->
-              <div class="construct">
-                  <input type="checkbox" name="hasbeard" id="ihasbeard">
-                  - бородатость
-              </div>
-
-              <!--Цвет бороды Индекс - 19-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="beardcolor" id="ibeardcolor">
-                  - цвета твоей бородатости
-              </div>
-
-              <!--Борода Индекс - 20-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="beard" id="ibeard">
-                  - бородища
-              </div>
-
-              <!--Есть ли усы? Индекс - 21-->
-              <div class="construct">
-                  <input type="checkbox" name="hasteache" id="ihasteache">
-                  - усатость
-              </div>
-
-              <!--Цвет бороды Индекс - 22-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="teachecolor" id="iteachecolor">
-                  - цвета усищ
-              </div>
-
-              <!--Борода Индекс - 23-->
-              <div class="construct">
-                  <input type="number" min="1" max= "8" name="teache" id="iteache">
-                  - усища
+                  - челюсть
               </div>
 
               <!--Нос Индекс - 24-->
@@ -179,16 +103,96 @@
                   - нюхало
               </div>
 
-              <!--Есть ли предмет? Индекс - 25-->
+              <!--Рот. Индекс - 14-->
               <div class="construct">
+                  <input type="number" min="1" max= "8" name="mouth" id="imouth">
+                  - рот
+              </div>
+              <!--Зубы. Индекс - 13-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teeth" id="iteeth">
+                  - зубы
+              </div>
+
+              <!--Глаза. Индекс - 15-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyes" id="ieyes">
+                  - глаза
+              </div>
+
+              <!--Глазные яблоки. Индекс - 11-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyeball" id="ieyeball">
+                  - зрачки
+              </div>
+
+              <!--Цвет глаз. Индекс - 10-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="eyesback" id="ieyesback">
+                  - цвет глаз
+              </div>
+
+              <!--Брови. Индекс - 17-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="brows" id="ibrows">
+                  - бровищи
+              </div>
+
+              <!--Цвет бровей. Индекс - 16-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="browscolor" id="ibrowscolor">
+                  - цвет бровищ
+              </div>
+              </br>
+
+              <!--Есть ли борода? Индекс - 18-->
+              <div class="constructcheckbox">
+                  <input type="checkbox" name="hasbeard" id="ihasbeard">
+                  - бородатость
+              </div>
+
+              <!--Борода Индекс - 20-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="beard" id="ibeard">
+                  - бородища
+              </div>
+
+              <!--Цвет бороды Индекс - 19-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="beardcolor" id="ibeardcolor">
+                  - цвета твоей бородатости
+              </div>
+              </br>
+
+              <!--Есть ли усы? Индекс - 21-->
+              <div class="constructcheckbox">
+                  <input type="checkbox" name="hasteache" id="ihasteache">
+                  - усатость
+              </div>
+
+              <!--Усы Индекс - 23-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teache" id="iteache">
+                  - усища
+              </div>
+
+              <!--Цвет усов Индекс - 22-->
+              <div class="construct">
+                  <input type="number" min="1" max= "8" name="teachecolor" id="iteachecolor">
+                  - цвета усищ
+              </div>
+              </br>
+
+              <!--Есть ли предмет? Индекс - 25-->
+              <div class="constructcheckbox">
                   <input type="checkbox" name="hasdop" id="ihasdop">
-                  - наличие шматья
+                  - наличие деталей
               </div>
 
               <!--Предмет Индекс - 26-->
               <div class="construct">
                   <input type="number" min="1" max= "8" name="dop" id="idop">
-                  - шматьё
+                  - детали
               </div>
             </div>
             <h3>история сгенерированных ключей</h3>
