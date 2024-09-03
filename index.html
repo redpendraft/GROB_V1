@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -359,15 +358,22 @@
             if (currentFocus != "Key") updatePortraitByInput();
         }
 
-        function updatePortraitByKey(){
-            let input = document.getElementById("inputField").value;
-            let portraitDivs = document.querySelectorAll("#portrait > div");
-            portraitDivs.forEach(div => div.innerHTML = '');
-
+        function loadPortrait(keycode){
+            let input = keycode;
             loadImage("back", `files/base/${imageMap.back}0${input.charAt(0)}.png`);
             loadImage("backbody", `files/base/${imageMap.backbody}${input.charAt(1)}${input.charAt(2)}.png`);
             loadImage("body", `files/base/${imageMap.body}0${input.charAt(3)}.png`);
-            loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
+            if(input[5] < 5){
+                if(input[9]>6||input[9]<3){
+                    loadImage("ear", `files/base/${imageMap.ear}01.png`);
+                }
+                else{
+                    loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
+                }
+            }
+            else{
+                loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
+            }
             // 5 шапка или причёска?
             loadImage("backhead", `files/base/${imageMap.backhead}${input.charAt(6)}${input.charAt(7)}.png`);
             loadImage("hair", `files/base/${imageMap.hair}${input.charAt(8)}${input.charAt(9)}.png`);
@@ -386,6 +392,13 @@
             // 25 есть ли дополнение?
             loadImage("dop", `files/base/${imageMap.dop}0${input.charAt(26)}.png`);
             document.getElementById("portrait").style.display = 'block';
+        }
+
+        function updatePortraitByKey(){
+            let input = document.getElementById("inputField").value;
+            let portraitDivs = document.querySelectorAll("#portrait > div");
+            portraitDivs.forEach(div => div.innerHTML = '');
+            loadPortrait(input);
             convertKey();
         }
 
@@ -441,28 +454,7 @@
             let portraitDivs = document.querySelectorAll("#portrait > div");
             portraitDivs.forEach(div => div.innerHTML = '');
 
-            loadImage("back", `files/base/${imageMap.back}0${input.charAt(0)}.png`);
-            loadImage("backbody", `files/base/${imageMap.backbody}${input.charAt(1)}${input.charAt(2)}.png`);
-            loadImage("body", `files/base/${imageMap.body}0${input.charAt(3)}.png`);
-            loadImage("ear", `files/base/${imageMap.ear}0${input.charAt(4)}.png`);
-            // 5 шапка или причёска?
-            loadImage("backhead", `files/base/${imageMap.backhead}${input.charAt(6)}${input.charAt(7)}.png`);
-            loadImage("hair", `files/base/${imageMap.hair}${input.charAt(8)}${input.charAt(9)}.png`);
-            loadImage("eyesback", `files/base/${imageMap.eyesback}0${input.charAt(10)}.png`);
-            loadImage("eyeball", `files/base/${imageMap.eyeball}0${input.charAt(11)}.png`);
-            loadImage("chin", `files/base/${imageMap.chin}0${input.charAt(12)}.png`);
-            loadImage("teeth", `files/base/${imageMap.teeth}0${input.charAt(13)}.png`);
-            loadImage("mouth", `files/base/${imageMap.mouth}0${input.charAt(14)}.png`);
-            loadImage("eyes", `files/base/${imageMap.eyes}0${input.charAt(15)}.png`);
-            loadImage("brow", `files/base/${imageMap.brow}${input.charAt(16)}${input.charAt(17)}.png`);
-            // 18 есть ли борода?
-            loadImage("beard", `files/base/${imageMap.beard}${input.charAt(19)}${input.charAt(20)}.png`);
-            // 21 есть ли усы?
-            loadImage("teache", `files/base/${imageMap.teache}${input.charAt(22)}${input.charAt(23)}.png`);
-            loadImage("nose", `files/base/${imageMap.nose}0${input.charAt(24)}.png`);
-            // 25 есть ли дополнение?
-            loadImage("dop", `files/base/${imageMap.dop}0${input.charAt(26)}.png`);
-            document.getElementById("portrait").style.display = 'block';
+            loadPortrait(input);
 
             document.getElementById("inputField").value = input;
         }
